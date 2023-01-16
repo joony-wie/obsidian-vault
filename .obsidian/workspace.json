@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "bc04ecd77da108dd",
@@ -133,7 +133,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -147,8 +148,8 @@
   },
   "active": "d28fceb74acc1df7",
   "lastOpenFiles": [
-    "index.md.md",
+    "Test.md",
     "README.md",
-    "Test.md"
+    "index.md.md"
   ]
 }
