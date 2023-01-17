@@ -45,12 +45,12 @@ sudo dnf -y install python3-devel
 sudo dnf -y install cargo
 LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)
 # export PATH
-export PATH=$HOME/.local/bin:$PATH
+echo 'export PATH=$HOME/.local/bin:$PATH' >> $HOME/.zshenv
 
 # Install alacritty terminal
 sudo dnf -y install freetype-devel fontconfig-devel libxcb-devel libxkbcommon-devel
 sudo dnf -y group install "Development Tools"
 cargo install alacritty
 # export PATH
-export PATH=$HOME/.cargo/bin:$PATH
+echo 'export PATH=$HOME/.cargo/bin:$PATH' >> $HOME/.zshenv
 ```
