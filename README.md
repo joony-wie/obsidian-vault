@@ -47,6 +47,25 @@ LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.
 # export PATH
 echo 'export PATH=$HOME/.local/bin:$PATH' >> $HOME/.zshenv
 
+# Install keyd for key remapping
+mkdir -p $HOME/workspaces/git
+cd $HOME/workspaces/git
+git clone https://github.com/rvaiya/keyd
+cd keyd
+make && sudo make install
+sudo systemctl enable keyd && sudo systemctl start keyd
+sudo tee -a /etc/keyd/default.conf > /dev/null << EOF
+[ids]
+
+*
+
+[main]
+
+# Maps capslock to escape when pressed and control when held.
+capslock = overload(control, esc)
+EOF
+sudo keyd reload
+
 # Install alacritty terminal
 sudo dnf -y install freetype-devel fontconfig-devel libxcb-devel libxkbcommon-devel
 sudo dnf -y group install "Development Tools"
